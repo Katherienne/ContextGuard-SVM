@@ -1,4 +1,5 @@
 # ContextGuard-SVM: Miscontextualization Detector
+## [ACM ICMR 2024 Grand Challenge on Detecting Cheapfakes](https://detecting-cheapfakes.github.io/icmr-2024.html)
 ## Model Description
 
 ### ContextSentinel-SVM: OOC Detection System
