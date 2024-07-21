@@ -302,6 +302,14 @@ class HeuristicDataLoader(Dataset):
             'label': item.get('true_label')
         }
     
+def cosine_collate_fn(batch):
+    collated_batch = {}
+    for key in batch[0].keys():
+        if isinstance(batch[0][key], torch.Tensor):
+            collated_batch[key] = torch.stack([sample[key] for sample in batch])
+        else:
+            collated_batch[key] = [sample[key] for sample in batch]
+    return collated_batch
 
 class Prepare_data_pred(Dataset):
     def __init__(self, df):
